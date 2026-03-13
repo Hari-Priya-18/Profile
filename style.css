@@ -436,6 +436,14 @@ a:hover {
   padding: 1.4rem 1.5rem;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
+    border-color 0.16s ease-out;
+}
+
+.timeline-item,
+.skills-group {
+  transition: transform 0.16s ease-out, border-color 0.16s ease-out,
+    box-shadow 0.16s ease-out;
 }
 
 .card-header {
@@ -444,6 +452,7 @@ a:hover {
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .card-header h3 {
@@ -477,6 +486,26 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.4rem;
+}
+
+.grid .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Better focus visibility for keyboard users */
+:where(a, button, input, textarea):focus-visible {
+  outline: 2px solid rgba(129, 140, 248, 0.85);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
 .skills-grid {
